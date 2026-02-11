@@ -33,15 +33,9 @@ function App() {
       const file = files[i];
       const fileName = file.name;
 
-
-
                   const pathParts = file.webkitRelativePath.split('/');
 
-                  let currentSoundType = 'effect'; // Tipo por defecto si no está en una subcarpeta reconocida
-
-            
-
-                  
+                  let currentSoundType = 'effect'; // Tipo por defecto si no está en una subcarpeta reconocida             
 
                   // Iterar sobre las partes de la ruta para encontrar las subcarpetas "Música" o "Efectos"
 
@@ -158,69 +152,11 @@ function App() {
         >
           Efectos de Sonido
         </div>
-        <div // NEW TAB
-          className={`tab ${activeTab === 'instructions' ? 'active' : ''}`}
-          onClick={() => setActiveTab('instructions')}
-        >
-          Instrucciones
-        </div>
       </div>
 
       <div className="content">
         {activeTab === 'ambient' && <SoundGrid sounds={ambientSounds} onSoundClick={playSound} />}
         {activeTab === 'effect' && <SoundGrid sounds={effectSounds} onSoundClick={playSound} />}
-        {activeTab === 'instructions' && ( // NEW CONTENT AREA
-          <div className="instructions-content" style={{textAlign: 'left', padding: '1rem'}}>
-            <h2>Cómo usar RPG Jukebox</h2>
-            <p>Esta aplicación te permite cargar y reproducir tus propios sonidos y música organizada desde una carpeta local de tu ordenador.</p>
-
-            <h3>1. Prepara tus archivos</h3>
-            <p>Organiza tus archivos de audio y sus iconos correspondientes en una estructura de carpetas en tu PC:</p>
-            <ul>
-              <li>Crea una carpeta principal (ej: <code>MiBibliotecaRPG</code>) que seleccionarás en la aplicación.</li>
-              <li>Dentro de esta carpeta principal, crea subcarpetas llamadas <code>Música</code> y <code>Efectos</code>.</li>
-              <li>**Convención de Nombres:**
-                <ul>
-                  <li>Cada par sonido/icono debe compartir el mismo número inicial <code>N</code>.</li>
-                  <li><code>N.nombre.mp3</code> para el sonido.</li>
-                  <li><code>N.nombre.jpg</code> o <code>N.nombre.jpeg</code> para el icono.</li>
-                  <li>Ejemplos: <code>1.CancionHeroica.mp3</code>, <code>1.CancionHeroica.jpg</code></li>
-                  <li>**Importante:** Puedes repetir el número <code>N</code> si los archivos están en diferentes subcarpetas de tipo (ej: <code>Música/1.Cancion.mp3</code> y <code>Efectos/1.Explosion.mp3</code> son válidos).</li>
-                </ul>
-              </li>
-              <li>**Asignación de Tipo:**
-                <ul>
-                  <li>Los archivos encontrados en la subcarpeta <code>Música</code> se clasificarán como "Música Ambiental".</li>
-                  <li>Los archivos encontrados en la subcarpeta <code>Efectos</code> se clasificarán como "Efectos de Sonido".</li>
-                  <li>Otros archivos (o los que no estén en estas subcarpetas) se clasificarán por defecto como "Efectos de Sonido".</li>
-                </ul>
-              </li>
-            </ul>
-
-            <h3>2. Carga la carpeta local</h3>
-            <p>En la aplicación, haz clic en el botón **"Cargar Carpeta Local"** y selecciona la carpeta principal que preparaste en el paso anterior.</p>
-            <p>La aplicación procesará tus archivos y los mostrará en las pestañas correspondientes.</p>
-
-            <h3>3. Reproducir sonidos</h3>
-            <ul>
-              <li>Haz clic en los iconos de sonido para reproducirlos.</li>
-              <li>La "Música Ambiental" se reproducirá en bucle y con un volumen más bajo.</li>
-              <li>Los "Efectos de Sonido" se reproducirán una vez.</li>
-              <li>Si un sonido no tiene icono, se mostrará un icono de "play" por defecto.</li>
-            </ul>
-
-            <h3>4. Controles adicionales</h3>
-            <ul>
-              <li>**"Parar Todo"**: Detiene todos los sonidos que se estén reproduciendo.</li>
-            </ul>
-
-            <h3>Consideraciones Importantes:</h3>
-            <ul>
-              <li>**Temporalidad:** Los archivos se cargan directamente desde tu navegador. Si refrescas la página o cierras la aplicación, la lista de sonidos se perderá. Tendrás que volver a cargar la carpeta.</li>
-              <li>**Compatibilidad:** Asegúrate de que los formatos de audio (`.mp3`) y imagen (`.jpg`, `.jpeg`) sean compatibles con tu navegador.</li>
-            </ul>
-          </div>
-        )}
       </div>
 
       <div className="controls">
