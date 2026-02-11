@@ -35,7 +35,7 @@ function App() {
 
                   const pathParts = file.webkitRelativePath.split('/');
 
-                  let currentSoundType = 'effect'; // Tipo por defecto si no está en una subcarpeta reconocida             
+                  let currentSoundType = 'ambient'; // Tipo por defecto si no está en una subcarpeta reconocida             
 
                   // Iterar sobre las partes de la ruta para encontrar las subcarpetas "Música" o "Efectos"
 
