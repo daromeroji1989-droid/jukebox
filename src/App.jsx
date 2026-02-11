@@ -169,8 +169,7 @@ function App() {
           onChange={handleFolderSelect}
           style={{ display: 'none' }}
         />
-        <button className="load-folder-btn" onClick={() => folderInputRef.current.click()}>Cargar Carpeta
-        </button>
+        <button className="load-folder-btn" onClick={() => folderInputRef.current.click()}>Cargar Carpeta </button>
         <button className="stop-btn" onClick={stopAllSounds}>Parar Todo</button>
       </div>
 
