@@ -37,7 +37,7 @@ function App() {
 
                   let currentSoundType = 'ambient'; // Tipo por defecto si no está en una subcarpeta reconocida             
 
-                  // Iterar sobre las partes de la ruta para encontrar las subcarpetas "Música" o "Efectos"
+                  // Iterar sobre las partes de la ruta para encontrar las subcarpetas "musica" o "Efectos"
 
                   for (let j = 0; j < pathParts.length - 1; j++) { // Excluir el nombre del archivo final
 
