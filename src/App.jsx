@@ -108,12 +108,12 @@ function App() {
       }
       const audio = new Audio(sound.sound);
       audio.loop = true;
-      audio.volume = 0.5;
+      audio.volume = 0.8;
       audio.play();
       ambientAudioRef.current = audio;
     } else {
       const audio = new Audio(sound.sound);
-      audio.volume = 0.8;
+      audio.volume = 0.5;
       audio.play();
       
       effectAudioRefs.current.push(audio);
