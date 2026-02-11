@@ -45,7 +45,7 @@ function App() {
 
             
 
-                    if (part === 'Música') {
+                    if (part === 'musica') {
 
                       currentSoundType = 'ambient';
 
