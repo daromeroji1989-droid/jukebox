@@ -48,12 +48,14 @@ function App() {
                     if (part === 'musica') {
 
                       currentSoundType = 'ambient';
+                      console.log(`Archivo "${fileName}" asignado a tipo "ambient" por estar en la carpeta "musica".`);
 
                       break; // Encontrado, no es necesario buscar más
 
                     } else if (part === 'Efectos') {
 
                       currentSoundType = 'effect';
+                      alert(`Archivo "${fileName}" asignado a tipo "effect" por estar en la carpeta "Efectos".`);
 
                       break; // Encontrado, no es necesario buscar más
 
@@ -169,7 +171,8 @@ function App() {
           onChange={handleFolderSelect}
           style={{ display: 'none' }}
         />
-        <button className="load-folder-btn" onClick={() => folderInputRef.current.click()}>Cargar Carpeta </button>
+        <button className="load-folder-btn" onClick={() => folderInputRef.current.click()}>Cargar Carpeta
+        </button>
         <button className="stop-btn" onClick={stopAllSounds}>Parar Todo</button>
       </div>
 
